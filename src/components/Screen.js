@@ -4,7 +4,7 @@ import Header from './Header';
 import Home from './Home';
 import LockScreen from './LockScreen';
 import NowPlaying from './NowPlaying';
-import Games from './Games';
+import Videos from './Videos';
 import Settings from './Settings';
 import Music from './Music';
 import Themes from './Themes';
@@ -37,9 +37,9 @@ class Screen extends React.Component {
             }}
           />
           <Route
-            path="/Games"
+            path="/Videos"
             render={(props) => {
-              return <Games {...props} />;
+              return <Videos {...props} />;
             }}
           />
           <Route

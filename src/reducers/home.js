@@ -2,7 +2,7 @@ import { INCREMENT_HOME_POSITION, DECREMENT_HOME_POSITION } from '../actions';
 
 const initialScreenListState = {
   homePosition: 0,
-  homeList: ['Now Playing', 'Music', 'Games', 'Settings'],
+  homeList: ['Now Playing', 'Music', 'Videos', 'Settings'],
 };
 
 export default function home(state = initialScreenListState, action) {

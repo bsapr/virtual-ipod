@@ -128,18 +128,18 @@ code {
   background-image: url('./static/NowPlaying.jpg');
 }
 
-.Games {
-  background-image: url('./static/Games.jpg');
+.Videos {
+  background-image: url('./static/Videos.jpg');
   width: 100%;
 }
 .Music {
-  background-image: url('./static/music.jpg');
+  background-image: url('./static/Music.jpg');
 }
 .Settings {
-  background-image: url('./static/Settings.png');
+  background-image: url('./static/Settings.jpg');
 }
 
-#games {
+#videos {
   display: flex;
   justify-content: center;
   align-items: center;
