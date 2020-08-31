@@ -1,34 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-class Home extends React.Component {
+class Wallpaper extends React.Component {
   render() {
-    const { homePosition, homeList } = this.props.home;
+    console.log('Wallpaper props ', this.props);
+    const { wallpaperPosition, wallpaperList } = this.props.wallpaper;
     return (
       <div id="screenList-body">
-        <div id="screenList">
-          {homeList.map((item, index) =>
-            index === homePosition ? (
+        <div id="screenList" style={{ width: '100%' }}>
+          {wallpaperList.map((item, index) =>
+            index === wallpaperPosition ? (
               <div className="screenListItem activeListItem">{item}</div>
             ) : (
               <div className="screenListItem">{item}</div>
             )
           )}
         </div>
-
-        <div
-          id="screenImage"
-          className={homeList[homePosition].replace(/\s/g, '')}
-        ></div>
       </div>
     );
   }
 }
-
 function mapStateToProps(state) {
   return {
-    home: state.home,
+    wallpaper: state.wallpaper,
   };
 }
-
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Wallpaper);

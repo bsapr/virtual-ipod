@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 class Header extends React.Component {
   constructor(props) {
     super(props);
     var today = new Date();
     var time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     this.state = {
       time: time,
     };
@@ -12,7 +12,7 @@ class Header extends React.Component {
   refreshTime = () => {
     let today = new Date();
     let time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     this.setState({ time: time });
   };
   componentDidMount = () => {
@@ -23,11 +23,11 @@ class Header extends React.Component {
       <div className="header">
         <span>
           <span>iPod</span>
-          <i class="fas fa-wifi"></i>
+          <i className="fas fa-wifi"></i>
         </span>
         <span>{this.state.time}</span>
         <span>
-          <i class="fas fa-battery-three-quarters green"></i>
+          <i className="fas fa-battery-three-quarters Green"></i>
         </span>
       </div>
     );

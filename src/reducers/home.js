@@ -15,7 +15,9 @@ export default function home(state = initialScreenListState, action) {
     case DECREMENT_HOME_POSITION:
       return {
         ...state,
-        homePosition: (state.homePosition - 1 + 4) % state.homeList.length,
+        homePosition:
+          (state.homePosition - 1 + state.homeList.length) %
+          state.homeList.length,
       };
     default:
       return state;

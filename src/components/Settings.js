@@ -1,34 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-class Home extends React.Component {
+class Settings extends React.Component {
   render() {
-    const { homePosition, homeList } = this.props.home;
+    console.log('Settings props ', this.props);
+    const { settingPosition, settingList } = this.props.settings;
     return (
       <div id="screenList-body">
-        <div id="screenList">
-          {homeList.map((item, index) =>
-            index === homePosition ? (
+        <div id="screenList" style={{ width: '100%' }}>
+          {settingList.map((item, index) =>
+            index === settingPosition ? (
               <div className="screenListItem activeListItem">{item}</div>
             ) : (
               <div className="screenListItem">{item}</div>
             )
           )}
         </div>
-
-        <div
-          id="screenImage"
-          className={homeList[homePosition].replace(/\s/g, '')}
-        ></div>
       </div>
     );
   }
 }
-
 function mapStateToProps(state) {
   return {
-    home: state.home,
+    settings: state.settings,
   };
 }
-
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Settings);
