@@ -14,6 +14,13 @@ import {
   decrementWheelColorPosition,
   incrementWallpaperPosition,
   decrementWallpaperPosition,
+  incrementMusicPosition,
+  decrementMusicPosition,
+  incrementSongPosition,
+  decrementSongPosition,
+  playPause,
+  updatePlayingSongIndex,
+  nextSong,
 } from '../actions';
 
 class Controller extends Component {
@@ -31,11 +38,20 @@ class Controller extends Component {
     selectRegion.bind(selectElement, 'tap', function (e) {
       selectTapControl(e);
     });
+
+    var playPauseElement = document.getElementById('play-pause');
+    var playPauseRegion = new ZingTouch.Region(playPauseElement);
+    const playPauseTapControl = this.playPauseTapControl;
+    playPauseRegion.bind(playPauseElement, 'tap', function (e) {
+      playPauseTapControl();
+    });
   }
 
   selectTapControl = (e) => {
     let { homeList, homePosition } = this.props.home;
     let { settingList, settingPosition } = this.props.settings;
+    let { musicList, musicPosition } = this.props.music;
+    let { songList, songPosition } = this.props.allSongs;
     if (this.props.location.pathname === '/') {
       this.props.history.push('/Home');
     } else if (this.props.location.pathname === '/Home') {
@@ -44,11 +60,33 @@ class Controller extends Component {
       this.props.history.push(
         `${settingList[settingPosition].replace(/\s/g, '')}`
       );
+    } else if (this.props.location.pathname === '/Music') {
+      this.props.history.push(`${musicList[musicPosition].replace(/\s/g, '')}`);
+    } else if (this.props.location.pathname === '/AllSongs') {
+      this.props.dispatch(nextSong(songList[songPosition]));
+      this.props.dispatch(updatePlayingSongIndex(songPosition));
+      this.props.history.push('/Playing');
+    } else if (
+      this.props.location.pathname === '/Playing' ||
+      this.props.location.pathname === '/NowPlaying'
+    ) {
+      this.playPauseTapControl();
     }
+  };
+
+  playPauseTapControl = () => {
+    console.log('play-pause tap emitted');
+    if (this.props.location.pathname === '/') {
+      return;
+    }
+    this.props.dispatch(playPause());
   };
 
   wheelControl = (e) => {
     console.log('rotate gesture emitted');
+    if (this.props.location.pathname === '/') {
+      return;
+    }
     if (e.detail.distanceFromOrigin === 0) {
       this.angle = e.detail.angle;
     }
@@ -105,6 +143,18 @@ class Controller extends Component {
       } else {
         this.props.dispatch(decrementWallpaperPosition());
       }
+    } else if (this.props.location.pathname === '/Music') {
+      if (value === 1) {
+        this.props.dispatch(incrementMusicPosition());
+      } else {
+        this.props.dispatch(decrementMusicPosition());
+      }
+    } else if (this.props.location.pathname === '/AllSongs') {
+      if (value === 1) {
+        this.props.dispatch(incrementSongPosition());
+      } else {
+        this.props.dispatch(decrementSongPosition());
+      }
     }
   };
 
@@ -123,6 +173,9 @@ function mapStateToProps(state) {
     home: state.home,
     settings: state.settings,
     themes: state.themes,
+    music: state.music,
+    allSongs: state.allSongs,
+    playing: state.playing,
   };
 }
 

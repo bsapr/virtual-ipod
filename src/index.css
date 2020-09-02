@@ -139,7 +139,73 @@ code {
   background-image: url('./static/Settings.jpg');
 }
 
-#videos {
+#playingContainer {
+  height: 91%;
+  background-color: rgb(192, 223, 248);
+}
+#nowPlaying {
+  height: 100%;
+}
+
+.song-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 70%;
+}
+
+.song-details img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+}
+
+/* name of song */
+.song-details h1 {
+  margin: 0px;
+  font-size: 20px;
+}
+
+.play-pause-nav {
+  text-align: center;
+  color: #5b5bf5;
+  margin: 0;
+}
+
+/* playing or not */
+.status {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* progress of song duration */
+#progress {
+  width: 65%;
+  height: 10px;
+  margin: 0px 5px;
+  background-color: gray;
+}
+
+/* progress bar filled */
+#progress-bar {
+  height: 10px;
+  background-color: green;
+}
+
+.status {
+  display: flex;
+  justify-content: space-around;
+}
+
+.status input {
+  width: 60%;
+}
+.noContent {
   display: flex;
   justify-content: center;
   align-items: center;

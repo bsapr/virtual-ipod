@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 class Home extends React.Component {
   render() {
     const { homePosition, homeList } = this.props.home;
+    const { imgList, currentPlayingSongIndex } = this.props.allSongs;
     return (
       <div id="screenList-body">
         <div id="screenList">
@@ -16,10 +17,18 @@ class Home extends React.Component {
           )}
         </div>
 
-        <div
-          id="screenImage"
-          className={homeList[homePosition].replace(/\s/g, '')}
-        ></div>
+        {homeList[homePosition] === 'Now Playing' ? (
+          <img
+            id="screenImage"
+            src={require(`../static/${imgList[currentPlayingSongIndex]}.png`)}
+            alt="img"
+          ></img>
+        ) : (
+          <div
+            id="screenImage"
+            className={homeList[homePosition].replace(/\s/g, '')}
+          ></div>
+        )}
       </div>
     );
   }
@@ -28,6 +37,7 @@ class Home extends React.Component {
 function mapStateToProps(state) {
   return {
     home: state.home,
+    allSongs: state.allSongs,
   };
 }
 

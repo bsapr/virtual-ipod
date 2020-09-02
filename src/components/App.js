@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import MyReactPlayer from './MyReactPlayer';
 import Screen from './Screen';
 import Controller from './Controller';
 import appendScript from '../utils';
@@ -20,6 +21,7 @@ class App extends React.Component {
       >
         <Screen />
         <Controller />
+        <MyReactPlayer />
       </div>
     );
   }
