@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/virtual-ipod/static/css/main.22ef2942.chunk.css",
+    "main.js": "/virtual-ipod/static/js/main.17da98da.chunk.js",
+    "main.js.map": "/virtual-ipod/static/js/main.17da98da.chunk.js.map",
+    "runtime-main.js": "/virtual-ipod/static/js/runtime-main.923cf9ed.js",
+    "runtime-main.js.map": "/virtual-ipod/static/js/runtime-main.923cf9ed.js.map",
+    "static/js/2.b25f2afd.chunk.js": "/virtual-ipod/static/js/2.b25f2afd.chunk.js",
+    "static/js/2.b25f2afd.chunk.js.map": "/virtual-ipod/static/js/2.b25f2afd.chunk.js.map",
+    "index.html": "/virtual-ipod/index.html",
+    "precache-manifest.76355263de983101aeef6b72a96e322c.js": "/virtual-ipod/precache-manifest.76355263de983101aeef6b72a96e322c.js",
+    "service-worker.js": "/virtual-ipod/service-worker.js",
+    "static/css/main.22ef2942.chunk.css.map": "/virtual-ipod/static/css/main.22ef2942.chunk.css.map",
+    "static/js/2.b25f2afd.chunk.js.LICENSE.txt": "/virtual-ipod/static/js/2.b25f2afd.chunk.js.LICENSE.txt",
+    "static/media/Despacito.png": "/virtual-ipod/static/media/Despacito.22b7a8a6.png",
+    "static/media/Despacito.mp3": "/virtual-ipod/static/media/Despacito.ae4c4364.mp3",
+    "static/media/Galaxy.png": "/virtual-ipod/static/media/Galaxy.9786544a.png",
+    "static/media/Infra.png": "/virtual-ipod/static/media/Infra.21f11c26.png",
+    "static/media/Landscape.png": "/virtual-ipod/static/media/Landscape.50c81fa6.png",
+    "static/media/Laung Gawacha.png": "/virtual-ipod/static/media/Laung Gawacha.38ff811d.png",
+    "static/media/Laung Gawacha.mp3": "/virtual-ipod/static/media/Laung Gawacha.936d58ce.mp3",
+    "static/media/index.css": "/virtual-ipod/static/media/Videos.f34a00dd.jpg",
+    "static/media/Shape of You.mp3": "/virtual-ipod/static/media/Shape of You.209b654f.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.923cf9ed.js",
+    "static/js/2.b25f2afd.chunk.js",
+    "static/css/main.22ef2942.chunk.css",
+    "static/js/main.17da98da.chunk.js"
+  ]
+}
